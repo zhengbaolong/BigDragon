@@ -1,0 +1,135 @@
+.pd-selectDate{
+	width: 80%;
+	float: left;
+	padding-right: 20px;
+}
+.pd-selectDate span,.pd-selectDate p{
+	float: right;
+}
+.pd-selectDate span{
+	display: block;
+	width: 267px;
+	height: 54px;
+	line-height: 54px;
+	padding-left: 50px;
+	background-image: url(../images/sub_4.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.pd-selectDate p{
+	padding-left: 1.5%;
+	padding-right: 1.5%;
+	line-height: 57px;
+}
+.pd-mainLeft-top{
+	height: 390px;
+	margin-bottom: 10px;
+}
+.pd-mainLeft-bottom{
+	height: 500px;
+}
+.pd-mainLeft{
+	padding-right: 10px;
+}
+.pd-mainRight{
+	height: 900px;
+}
+.pd-mainLeft-top .leftConentTop{
+	height: 330px;
+}
+.pd-mainLeft-bottom .leftConentBottom{
+	height: 440px;
+}
+.pd-mainRight .RightConent{
+	height: 840px;
+}
+.leftConentTop ul li{
+	float: left;
+	width: 20%;
+	text-align: center;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.pdList ul:nth-of-type(even){
+	background-color: rgba(6, 15, 76, 0.36);
+}
+.pdList ul:hover{
+	background-color: #7b6e1a;
+}
+.leftConentTop .pd-TopList{
+	height: 50px;
+	background-image: url(../images/sub_5.png);
+}
+.leftConentTop .pd-TopList li{
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	
+}
+.flip{
+	display: flex;
+	margin-top: 4px;
+	align-items: center;
+	justify-content: center;
+}
+.flip img{
+	margin-left: 5px;
+	background-color: rgba(6, 15, 76, 0.6);
+}
+.leftConentBottom ul li{
+	float: left;
+	width: 50%;
+	min-height: 45px;
+	line-height: 45px;
+	font-size: 18px;
+	padding-left: 5%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.leftConentBottom ul{
+	margin-top: 50px;
+}
+.pd-li-other{
+	display: flex;
+	align-items: top;
+}
+.pd-li-other textarea{
+	max-width: 201px;
+	max-height: 96px;
+	color: #666666;
+}
+.btn-cancelSave{
+	margin-top: 20px;
+	padding-right: 7%;
+	width: 100%;
+}
+.btn-cancelSave p{
+	width: 125px;
+	height: 45px;
+	display: block;
+	text-align: center;
+	line-height: 45px;
+	border:#4a7893 solid 1px;
+	float: right;
+	margin-left: 15px;
+}
+.btn-cancelSave p:first-child{
+	background-color: #0f4d79;
+}
+.btn-cancelSave p+p{
+	background-color: #339999;
+}
+.pdList ul{
+	height: 42px;
+}
+.pdList ul li{
+	width: 20%;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 42px;
+}

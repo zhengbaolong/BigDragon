@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>设备在线检测</title>
+</head>
+
+<body>
+
+  <div class="row c-tagDorpmenu">
+    <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 left">
+      <img src="../images/sub_1.png" />
+      <aside>状态监测 -> 设备在线监测</aside>
+    </div>
+    <div class=" col-lg-8 col-md-8 col-xs-8 col-sm-8 right">
+      <select style="margin-left: 53%;">
+        <option>变电站</option>
+        <option>测试1</option>
+        <option>测试2</option>
+      </select>
+      <div class="btn-affirm">确认</div>
+    </div>
+  </div>
+  <div class="line-list">
+
+    <div class="line-sation line-col-1">
+      <ul>
+        <li class="clickBtn">油色谱</li>
+        <li class="stateFoucs">特高频</li>
+        <li class="stateFoucs">红外</li>
+        <li>机械特性</li>
+        <li>避雷器</li>
+        <li>空间定位</li>
+        <li>铁芯接地电流</li>
+      </ul>
+    </div>
+    <div class="line-sation line-col-2">
+        <div class="title">
+          <img src="../images/index_3.png" />
+          <span>监测装置状态</span>
+        </div>
+        <div class="line-chars-height">
+          <div class="line-jczz line-jczz-left" id="line-jczz"></div>
+          <div class="line-jczz line-jczz-right">
+            正常<span>96</span>异常<span>16</span>
+          </div>
+        </div>
+    </div>
+    <div class="line-sation line-col-2">
+        <div class="title">
+          <img src="../images/index_3.png" />
+           <span>一次设备状态</span>
+        </div>
+        <div class="line-chars-height line-chars-height-2">
+            <div class="line-jczz line-jczz-left" id="line-jczz2"></div>
+            <div class="line-jczz line-jczz-right">
+                正常<span>96</span>异常<span>16</span>断传<span style="color:#FD6764;">24</span>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="clearBoth"></div>
+  <div class="row marginTop10">
+    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6 line-cont-bottom">
+      <div class="line-mainBttom-left layout-bg-style">
+        <div class="title">
+          <img src="../images/index_3.png" />
+          <span>实时监测曲线</span>
+        </div>
+        <div class="line-mainBttom-chars" id="line-left-2"></div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6 line-cont-bottom">
+      <div class="line-mainBttom-right layout-bg-style">
+        <div class="title">
+          <img src="../images/index_3.png" />
+          <span>实时监测曲线</span>
+        </div>
+        <div class="line-mainBttom-chars line-mainBttom-list">
+          <ul class="ul1">
+            <li>设备名称</li>
+            <li>仪器序号</li>
+            <li>报警总数</li>
+            <li>开始时间</li>
+            <li>结束时间</li>
+          </ul>
+          <div id="ComList">          
+          </div>
+
+          <div class="page">
+            <img src="../images/sub_page2.png" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script>
+
+      function lineList(){
+        var dataList = [
+          ['左侧隔离开关','MS-S600-1023','11','2017-11-08 11:11','2017-11-08 11:11'],
+          ['#1绝缘子','MS-S600-1023','11','2017-11-08 11:11','2017-11-08 11:11']
+        ];
+
+        $.ajax({
+          type:"POST",
+            url:baseUrl + "/bigdata-0.0.1-SNAPSHOT/appliance",
+            data:{
+                
+            },
+            success:function(result){
+              var html='';
+             for(var i=0;i<dataList.length;i++){
+               html += "<ul>";
+               for(var j=0;j<dataList[i].length;j++){
+                html += "<li>"+dataList[i][j]+"</li>";
+               }
+               html += "</ul>";
+             };
+             $('#ComList').html(html);
+            }
+        });
+      };
+      lineList();
+
+
+    //测试数据
+
+    optionTwo = {
+      color: ['#01FFFF', '#FD6764'],
+      series: [
+        {
+          name: '访问来源',
+          type: 'pie',
+          selectedMode: 'single',
+          radius: [0, '74%'],
+
+          label: {
+            normal: {
+              position: 'inner',
+              color: '#0C5381',
+              fontSize: 20,
+              fontWeight: 800,
+            }
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: [
+            { value: 96, name: 96 },
+            { value: 16, name: 16, selected: true },
+
+          ]
+        },
+
+      ]
+    };
+    var lineTwo = echarts.init(document.getElementById('line-jczz'));
+    lineTwo.setOption(optionTwo);
+
+//一次设备状态
+    optionState = { 
+    color:['#01FFFF','#FECC00','#FD6764'],
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            selectedMode: 'single',
+            radius: [0, '80%'],
+
+            label: {
+                normal: {
+                    position: 'inner',
+                    color:'#0C5381',
+                    fontSize: 20,
+                    fontWeight:800,
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:96, name:'96'},
+                {value:10, name:'10'},
+                {value:24, name:'24', selected:true},
+                
+            ]
+        },
+        
+    ]
+};
+var optionStateveater = echarts.init(document.getElementById('line-jczz2'));
+    optionStateveater.setOption(optionState);
+
+
+
+
+
+    option = {
+      color: ['#F7F639', '#AAA4DB', '#59B2C6'],
+      grid: {
+        left: '1%',
+        right: '5%',
+        top: '6%',
+        bottom: '6%',
+        containLabel: true
+      },
+      toolbox: {
+        "show": false,
+        feature: {
+          saveAsImage: {}
+        }
+      },
+      xAxis: {
+        type: 'category',
+        "axisLine": {
+          lineStyle: {
+            color: '#FF4500'
+          }
+        },
+        "axisTick": {
+          "show": false
+        },
+        axisLabel: {
+          textStyle: {
+            color: '#fff'
+          }
+        },
+        boundaryGap: false,
+        data: ['08时', '09时', '10时', '11时', '12时', '13时', '14时', '15时', '16时']
+      },
+      yAxis: {
+        "axisLine": {
+          lineStyle: {
+            color: '#fff'
+          }
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            color: '#fff'
+          }
+        },
+        "axisTick": {
+          "show": false
+        },
+        axisLabel: {
+          textStyle: {
+            color: '#fff'
+          }
+        },
+        type: 'value'
+      },
+      series: [{
+        name: 'a',
+        smooth: true,
+        type: 'line',
+        symbolSize: 8,
+        symbol: 'circle',
+        data: [90, 50, 39, 50, 120, 82, 80, 90, 50],
+        itemStyle: {
+          normal: {
+            lineStyle: {
+              width: 4,
+            }
+          }
+        }
+      }, {
+        name: 'b',
+        smooth: true,
+        type: 'line',
+        symbolSize: 8,
+        symbol: 'circle',
+        data: [70, 50, 50, 87, 90, 80, 70, 70, 50],
+        itemStyle: {
+          normal: {
+            lineStyle: {
+              width: 4,
+            }
+          }
+        }
+      }, {
+        name: 'c',
+        smooth: true,
+        type: 'line',
+        symbolSize: 8,
+        symbol: 'circle',
+        data: [40, 50, 32, 68, 46, 50, 53, 44, 37],
+        itemStyle: {
+          normal: {
+            lineStyle: {
+              width: 4,
+            }
+          }
+        }
+      },]
+    }
+    var lineLeft2 = echarts.init(document.getElementById('line-left-2'));
+    lineLeft2.setOption(option);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script type="text/javascript" src="../js/juicer-min.js"></script>
+    <script id="tpl" type="text/template">
+    {@each xx as it}
+    <ul>
+      <li>xx:${it.sbmc}</li>
+    </ul>
+    {@/each}
+  </script>
+    <script>
+        function tfList2() {
+            $.ajax({
+                type: "GET",
+                url: "../js/list.json",
+                data: {
+
+                },
+                success: function (result) {
+                    
+                    var tpl = document.getElementById('tpl').innerHTML;
+                    console.log(juicer(tpl, {xx: result.data}));
+
+                    // for(var i=0;i<result['data'].length;i++){
+                    //   html +=  "<ul>";
+                    //   html += "<li>"+result['data'][i].xh+"</li>";
+                    //   html += "<li>"+result['data'][i].bdz+"</li>";
+                    //   html += "<li>"+result['data'][i].sbmc+"</li>";
+                    //   html += "<li>"+result['data'][i].ycsj+"</li>";
+                    //   html += "<li>"+result['data'][i].kfz+"</li>";
+                    //   html += "<li>"+result['data'][i].fssj+"</li>";
+                    //   html += "</ul>";
+                    // }
+                }
+            });
+        };
+        tfList2();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+.login-style-bg{
+  width: 100%;
+  height: 100%;
+  background: url(../images/login_Bg.png);
+  background-repeat:no-repeat ;
+  background-size:100% 100%; 
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.loginWrap{
+  width: 500px;
+  height:675px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-left: 55%;
+  margin-top: 230px;
+  padding-top:60px;
+  box-shadow: 0 0 6px #94f9fb;
+}
+.logoImg{
+  margin: 0 auto;
+  display: block;
+  width: 327px;
+  height: 94px;
+  opacity: 1;
+}
+.loginView{
+  width: 420px;
+  padding-top: 80px;
+  height: 400px;
+  margin: 0 auto;
+}
+.loginView input{
+  width: 100%;
+  height: 50px;
+  padding-left: 60px;
+  margin-bottom: 38px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: #85939a;
+}
+.loginView .scan{
+  width: 50px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  background-position:center center
+}
+.loginView .scan::after{
+  content: '';
+  display: block;
+  width: 2px;
+  right: 0;
+  top: 8px;
+  height: 34px;
+  background-color: #a5c5d5;
+  position: absolute;
+}
+.userimg{
+  background: url(../images/login_use.png);
+  background-repeat:no-repeat;
+}
+.passimg{
+  background: url(../images/login_password.png);
+  background-repeat:no-repeat;
+}
+.loginBtn{
+  width: 100%;
+  height:50px;
+  background-color: #0cddff;
+  border-radius:5px;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+ /* 1366*768 1600*900 1440*900 */
+ @media screen and (max-width: 1600px) {
+  .loginWrap{
+    margin-left:60%;
+    margin-top: 180px;
+    width: 400px;
+    height: 550px;
+  }
+  .loginView {
+    width: 335px;
+  }
+  .loginView input{
+    font-size: 16px;
+    height: 40px;
+  }
+  .loginView .scan {
+    background-size: 38%;
+    height: 40px;
+  }
+  .loginBtn{
+    font-size: 18px;
+    font-weight: bold;
+    height:40px;
+  }
+  .loginView .scan::after{
+    height: 24px;
+  }
+} 
+@media screen and (max-width: 1440px) {
+  .loginWrap{
+    margin-top: 160px;
+    width: 400px;
+    height: 550px;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .loginWrap{
+    margin-top: 150px;
+    width: 360px;
+    height: 480px;
+  }
+  .logoImg{
+    width: 261px;
+    height: 75px;
+  }
+  .loginView {
+    padding-top: 60px;
+    width: 300px;
+  }
+} 
+/*@media screen and (max-width: 1024px) {
+  .loginWrap{
+    margin-top: 130px;
+    width: 360px;
+    height: 480px;
+  }*/
+} 

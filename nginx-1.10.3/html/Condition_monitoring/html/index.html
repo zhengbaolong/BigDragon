@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>首页</title>
+  <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/commen.css" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/partialDischarge.css" />
+  <link rel="stylesheet" href="../css/transformer.css" />
+  <link rel="stylesheet" href="../css/line.css" />
+  <link rel="stylesheet" href="../css/screen.css" />
+
+</head>
+
+<body>
+  <div class="container-fluid content index-style-bg">
+    <header>
+      <div class="head-content">
+        <div class="nav-logo nav-flex">
+          <img src="../images/logo.png" />
+        </div>
+        <div class="nav-menu nav-flex">
+          <ul>
+            <li classa="nav-menu-li1" id="index">
+              <div class="nav-menu-other nav-menu-other1">
+                <img src="../images/nav_1.png" />
+                <span>首页</span>
+              </div>
+            </li>
+            <li class="nav-menu-li2" id="nav2">
+              <div class="nav-menu-other nav-menu-other2">
+                <img src="../images/nav_2.png" />
+                <span>状态分析</span>
+              </div>
+            </li>
+            <li class="nav-menu-li3">
+              <div class="nav-menu-other nav-menu-other3">
+                <img src="../images/nav_3.png" />
+                <span>状态监测</span>
+              </div>
+              <div class="subnav">
+                <p id="nav-menu-1">局部放电风险分析</p>
+                <p id="nav-menu-2">设备在线监测</p>
+              </div>
+            </li>
+            <li class="nav-menu-li4" id="nav3">
+              <div class="nav-menu-other nav-menu-other4">
+                <img src="../images/nav_4.png" />
+                <span>智能诊断</span>
+              </div>
+            </li>
+            <li class="nav-menu-li5" id="nav4">
+              <div class="nav-menu-other nav-menu-other5">
+                <img src="../images/nav_5.png" />
+                <span>运检报告</span>
+              </div>
+            </li>
+            <div class="clearBoth"></div>
+          </ul>
+        </div>
+        <div class="nav-LoginSettingQuit nav-flex">
+          <ul>
+            <li>王简报&lt;dawew@124.com&gt;</li>
+            <li>设置</li>
+            <li>退出</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="main" id="main">
+      <div class="main-left">
+        <div class="sideBar-top layout-bg-style layout-bottom-bg-style">
+          <div class="title">
+            <img src="../images/index_3.png" />
+            <span>重要设备状态总览</span>
+            <a href="#">更多>></a>
+          </div>
+          <div class="device-list">
+            <ul>
+              <li>
+                <div class="device-list-cshart" id="chartmain_0">
+
+                </div>
+                <div class="device-list-status">
+                  <p>变压器</p>
+                  <aside class="blue">正常设备：
+                    <span id="device-list-status-normal-0" class="">54</span>
+                  </aside>
+                  <aside class="red">非正常设备：
+                    <span id="device-list-status-abnormal-0" class="">3</span>
+                  </aside>
+                </div>
+              </li>
+
+              <li>
+                <div class="device-list-cshart" id="chartmain_1">
+                </div>
+                <div class="device-list-status">
+                  <p>组合电器</p>
+                  <aside class="blue">正常设备：
+                    <span id="device-list-status-normal-1" class="">54</span>
+                  </aside>
+                  <aside class="red">非正常设备：
+                    <span id="device-list-status-abnormal-1" class="">3</span>
+                  </aside>
+                </div>
+              </li>
+              <li>
+                <div class="device-list-cshart" id="chartmain_2">
+                </div>
+                <div class="device-list-status">
+                  <p>断路器</p>
+                  <aside class="blue">正常设备：
+                    <span id="device-list-status-normal-2" class="">54</span>
+                  </aside>
+                  <aside class="red">非正常设备：
+                    <span id="device-list-status-abnormal-2" class="">3</span>
+                  </aside>
+                </div>
+              </li>
+              <li>
+                <div class="device-list-cshart" id="chartmain_3">
+                </div>
+                <div class="device-list-status">
+                  <p>避雷器</p>
+                  <aside class="blue">正常设备：
+                    <span id="device-list-status-normal-3" class="">54</span>
+                  </aside>
+                  <aside class="red">非正常设备：
+                    <span id="device-list-status-abnormal-3" class="">3</span>
+                  </aside>
+                </div>
+              </li>
+            
+            </ul>
+          </div>
+        </div>
+        <div class="sideBar-center layout-bg-style layout-bottom-bg-style marginTop">
+          <div class="title">
+            <img src="../images/index_3.png" />
+            <span>重要断面设备运行状态分析</span>
+            <a href="#">更多>></a>
+          </div>
+          <div class="sideBar-center-cont1 sideBarStyle">
+            <div class="device-list-cshart" id="left-2">
+
+            </div>
+            <div class="device-list-status" style="width: calc(100% - 8% - 80px);">
+              <aside>正常设备：
+                <span class="">0</span>
+              </aside>
+              <aside>注意设备：
+                <span class="">0</span>
+              </aside>
+              <aside>异常设备：
+                <span class="">0</span>
+              </aside>
+              <aside>严重设备：
+                <span class="">0</span>
+              </aside>
+            </div>
+          </div>
+        </div>
+        <div class="sideBar-bottom layout-bg-style layout-bottom-bg-style marginTop">
+          <div class="title">
+            <img src="../images/index_3.png" />
+            <span>在线监测装置状态</span>
+            <a href="#">更多>></a>
+          </div>
+          <div class="sideBar-bottom-cont2 sideBarStyle" id="left-3"></div>
+        </div>
+      </div>
+      <div class="main-center">
+        <div class="map">
+          <img src="../images/index_map.png" />
+        </div>
+        <div class="maintenanceRecord layout-bg-style layout-bottom-bg-style">
+          <p>本月运维检修记录
+            <span id="record-total">515</span>
+          </p>
+          <ul>
+            <li>带电检测
+              <span id="record-1">23</span>
+            </li>
+            <li>例行检测
+              <span id="record-2">23</span>
+            </li>
+            <li>一般巡视
+              <span id="record-3">23</span>
+            </li>
+            <li>特殊巡视
+              <span id="record-4">23</span>
+            </li>
+            <li>检修记录
+              <span id="record-5">23</span>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+      <div class="main-right">
+        <div class="yj layout-bg-style layout-bottom-bg-style">
+          <div class="title">
+            <img src="../images/index_3.png" />
+            <span>预警信息</span>
+            <a href="#">更多>></a>
+          </div>
+          
+        </div>
+        <div class="qx marginTop layout-bg-style layout-bottom-bg-style">
+          <div class="title">
+            <img src="../images/index_3.png" />
+            <span>缺陷信息</span>
+            <a href="#">更多>></a>
+          </div>
+          <div class="qx_content" id="qxxx"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../js/echarts.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+  <script>
+    var baseUrl = '';
+
+    function forTest() {
+      //重要设备状态总览
+      var data = [
+        [54, 3],
+        [54, 3],
+        [54, 3],
+        [54, 3],
+        [35, 2]
+      ]; //测试数据
+      for (i = 0; i < data.length; i++) {
+        var opt = getPieBaseOption(data[i]);
+        var myChart = echarts.init(document.getElementById('chartmain_' + i));
+        myChart.setOption(opt);
+        //device-list-status-normal-4
+        //device-list-status-abnormal-4
+      };
+      //在线监测装置状态
+      var left3 = echarts.init(document.getElementById('left-3'));
+      //TO-DO
+      left3.setOption(getOption3());
+      //缺陷信息
+      var qxxx = echarts.init(document.getElementById('qxxx'));
+      //TO-DO
+      qxxx.setOption(getOption4());
+    }
+
+    $(function () {
+      // forTest();
+
+      ajaxcall1();
+      ajaxcall2();
+      ajaxcall3();
+      ajaxcall4();
+      //重要断面设备运行状态分析（静态）
+      var myChart2 = echarts.init(document.getElementById('left-2'));
+      myChart2.setOption(getOption2());
+
+//nav hover
+	$('.nav-menu ul li').hover(function(){
+		if($(this).index() == 0){
+			$(this).find('img').attr('src','../images/nav_1_foucs.png');
+		}
+		if($(this).index() == 1){
+			$(this).find('img').attr('src','../images/nav_2_foucs.png');
+		}
+		if($(this).index() == 2){
+			$(this).find('img').attr('src','../images/nav_3_foucs.png');
+		}
+		if($(this).index() == 3){
+			$(this).find('img').attr('src','../images/nav_4_foucs.png');
+		}
+			if($(this).index() == 4){
+			$(this).find('img').attr('src','../images/nav_5_foucs.png');
+		}
+	},function(){
+		if($(this).index() == 0){
+			$(this).find('img').attr('src','../images/nav_1.png');
+		}
+		if($(this).index() == 1){
+			$(this).find('img').attr('src','../images/nav_2.png');
+		}
+		if($(this).index() == 2){
+			$(this).find('img').attr('src','../images/nav_3.png');
+		}
+		if($(this).index() == 3){
+			$(this).find('img').attr('src','../images/nav_4.png');
+		}
+			if($(this).index() == 4){
+			$(this).find('img').attr('src','../images/nav_5.png');
+		}
+	});
+
+//导航二级菜单
+      $(".nav-menu ul li").each(function (index) {
+        var Index = index;
+        $('.nav-menu ul li').hover(function () {
+          $(this).find('.subnav').eq(Index).show();
+        }, function () {
+          $(".subnav").hide();
+        });
+      });
+	
+	//单页应用js
+      $('#nav2').click(function () {
+        $('#main').load('transformer.html');
+      });
+      $('#nav-menu-1').click(function () {
+        $('#main').load('partialDischarge.html');
+      });
+      $('#nav-menu-2').click(function () {
+        $('#main').load('line.html');
+      });
+      $('#index').click(function () {
+        window.location.href = "index.html";
+      });
+    });
+
+    //加载重要设备状态总览
+    function ajaxcall1() {
+      $.ajax({
+        type: "POST", //提交方式 
+        url: baseUrl + "/bigdata-0.0.1-SNAPSHOT/appliance", //路径 
+        data: {
+
+        }, //数据，这里使用的是Json格式进行传输 
+        success: function (result) { //返回数据根据结果进行相应的处理 
+          //重要设备状态总览
+          var data = [
+            [result['byq'], result['blq_unnormal']],
+            [result['zhdq'], result['zhdq_unnormal']],
+            [result['dlq'], result['dlq_unnormal']],
+            [result['blq'], result['blq_unnormal']]
+          ]; //测试数据
+          for (i = 0; i < data.length; i++) {
+            var opt = getPieBaseOption(data[i]);
+            var myChart = echarts.init(document.getElementById('chartmain_' + i));
+            myChart.setOption(opt);
+            //TO-DO
+            $('#device-list-status-normal-' + i).html(data[i][0]);
+            $('#device-list-status-abnormal-' + i).html(data[i][1]);
+            //device-list-status-normal-4
+            //device-list-status-abnormal-4
+          };
+        }
+      });
+    }
+
+    //加载在线监测装置状态
+    function ajaxcall2() {
+      $.ajax({
+        type: "POST", //提交方式 
+        url: baseUrl + "/bigdata-0.0.1-SNAPSHOT/stat", //路径 
+        data: {
+
+        }, //数据，这里使用的是Json格式进行传输 
+        success: function (result) { //返回数据根据结果进行相应的处理 
+          //在线监测装置状态
+          var left3 = echarts.init(document.getElementById('left-3'));
+          //TO-DO
+          left3.setOption(getOption3(result));
+        }
+      });
+    }
+
+    //加载缺陷信息
+    function ajaxcall3() {
+      $.ajax({
+        type: "POST", //提交方式 
+        url: baseUrl + "/bigdata-0.0.1-SNAPSHOT/info", //路径 
+        data: {
+
+        }, //数据，这里使用的是Json格式进行传输 
+        success: function (result) { //返回数据根据结果进行相应的处理 
+          //缺陷信息
+          var qxxx = echarts.init(document.getElementById('qxxx'));
+          //TO-DO
+          qxxx.setOption(getOption4(result));
+        }
+      });
+    }
+
+
+    //加载本月运维检修记录
+    function ajaxcall4() {
+      $.ajax({
+        type: "POST", //提交方式 
+        url: baseUrl + "/bigdata-0.0.1-SNAPSHOT/record", //路径 
+        data: {
+
+        }, //数据，这里使用的是Json格式进行传输 
+        success: function (result) { //返回数据根据结果进行相应的处理 
+          //TO-DO
+          $('#record-total').html(result['normal'] + result['special']);
+          $('#record-1').html(0);
+          $('#record-2').html(0);
+          $('#record-3').html(result['normal']);
+          $('#record-4').html(result['special']);
+          $('#record-5').html(0);
+        }
+      });
+     
+    }
+
+    //重要设备状态总览
+    function getPieBaseOption(_data) {
+      var option = {
+        series: [{
+          type: 'pie',
+          name: '',
+          radius: ['48%', '88%'],
+          hoverAnimation: false,
+          silent: true,
+          clockwise: false,
+          data: [{
+            value: 0,
+            name: '',
+            label: {
+              normal: {
+                show: true,
+                position: 'center',
+                formatter: function () {
+                  return _data[0] + _data[1];
+                },
+                color: '#fff',
+                fontSize: 16,
+                fontWeight: 'bold'
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: '#0d3768',
+                shadowBlur: 10,
+                shadowColor: '#DCDCDC',
+                show: true
+              }
+            }
+          }]
+        }, {
+          type: 'pie',
+          radius: ['50%', '86%'],
+          hoverAnimation: false,
+          itemStyle: {
+            normal: {
+              color: function (params) {
+                var color = [
+                  new echarts.graphic.LinearGradient(1, 0, 0, 0, [{
+                    offset: 0,
+                    color: '#1eb0ec'
+                  }, {
+                    offset: 1,
+                    color: '#156be1'
+                  }]),
+                  new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                    offset: 0,
+                    color: '#f1986c'
+                  }, {
+                    offset: 1,
+                    color: '#e74b5c'
+                  }])
+                ];
+                return color[params.dataIndex];
+              }
+            }
+          },
+          data: [{
+            value: _data[0],
+            labelLine: {
+              normal: {
+                show: false
+              },
+              emphasis: {
+                show: false
+              }
+            },
+          }, {
+            value: _data[1],
+            labelLine: {
+              normal: {
+                show: false
+              },
+              emphasis: {
+                show: false
+              }
+            },
+          }]
+        }]
+      };
+      return option;
+    }
+
+    function getOption2(_data) {
+      var option = {
+        series: [{
+          type: 'pie',
+          name: '',
+          radius: ['48%', '88%'],
+          hoverAnimation: false,
+          silent: true,
+          clockwise: false,
+          data: [{
+            value: 0,
+            name: '',
+            label: {
+              normal: {
+                show: true,
+                position: 'center',
+                formatter: '',
+                color: '#fff',
+                fontSize: 30,
+                fontWeight: 'bold'
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: '#0d3768',
+                shadowBlur: 10,
+                shadowColor: '#DCDCDC',
+                show: true
+              }
+            }
+          }]
+        }, {
+          type: 'pie',
+          radius: ['50%', '86%'],
+          hoverAnimation: false,
+          itemStyle: {
+            normal: {
+              color: function (params) {
+                var color = [
+                  new echarts.graphic.LinearGradient(1, 0, 0, 0, [{
+                    offset: 0,
+                    color: '#1eb0ec'
+                  }, {
+                    offset: 1,
+                    color: '#156be1'
+                  }]),
+                  new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                    offset: 0,
+                    color: '#f1986c'
+                  }, {
+                    offset: 1,
+                    color: '#e74b5c'
+                  }]),
+                  new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                    offset: 0,
+                    color: '#00ff0e'
+                  }, {
+                    offset: 1,
+                    color: '#00c00a'
+                  }]),
+                  new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                    offset: 0,
+                    color: '#f4b900'
+                  }, {
+                    offset: 1,
+                    color: '#ebb500'
+                  }])
+                ];
+                return color[params.dataIndex];
+              }
+            }
+          },
+          data: [{
+            value: 1,
+            labelLine: {
+              normal: {
+                show: false
+              },
+              emphasis: {
+                show: false
+              }
+            },
+          }, {
+            value: 1,
+            labelLine: {
+              normal: {
+                show: false
+              },
+              emphasis: {
+                show: false
+              }
+            },
+          }, {
+            value: 1,
+            labelLine: {
+              normal: {
+                show: false
+              },
+              emphasis: {
+                show: false
+              }
+            },
+          }, {
+            value: 1,
+            labelLine: {
+              normal: {
+                show: false
+              },
+              emphasis: {
+                show: false
+              }
+            },
+          }]
+        }]
+      };
+      return option;
+    }
+
+    function getOption3(_data) {
+      //在线监测装置状态
+      var option = {
+        // color: ['#00ccff', '#ff9900', '#ff3333'],
+        color: ['#00ccff', '#ff3333'],
+        grid: {
+          top: '8%',
+          left: '3%',
+          right: '4%',
+          bottom: '0%',
+          containLabel: true
+        },
+        xAxis: {
+          show: false
+        },
+        yAxis: [{
+          type: 'category',
+          data: ['避雷器阻性电流', '铁芯接电电流', '油色谱', '特高频'],
+          axisLabel: { //调整x轴的lable   
+            textStyle: {
+              fontSize: 14, // 让字体变大 
+              color: '#fff'
+            }
+          },
+          axisLine: {
+            show: false
+          },
+        }, {
+          type: "category",
+          data: ['0%', _data['sol_counts'] / _data['sol_total'] * 100 + '%', _data['iron_counts'] / _data[
+            'iron_total'] * 100 + '%', '0%'],
+          axisLabel: { //调整x轴的lable   
+            textStyle: {
+              fontSize: 14, // 让字体变大 
+              color: '#fff'
+            }
+          },
+          axisLine: {
+            show: false
+          },
+          splitLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          }
+        }],
+        series: [{
+            name: '正常的',
+            type: 'bar',
+            stack: '总量',
+            barWidth: 16,
+            label: {
+              normal: {
+                show: false,
+                position: 'insideRight'
+              }
+            },
+            data: [0, _data['sol_counts'], _data['iron_counts'], 0]
+          }, {
+            name: '不正常的',
+            type: 'bar',
+            stack: '总量',
+            label: {
+              normal: {
+                show: false,
+                position: 'insideRight'
+              }
+            },
+            data: [0, _data['sol_total'] - _data['sol_counts'], _data['iron_total'] - _data['iron_counts'], 0]
+          },
+          // {
+          //   name: '成本',
+          //   type: 'bar',
+          //   stack: '总量',
+          //   label: {
+          //     normal: {
+          //       show: false,
+          //       position: 'insideRight'
+          //     }
+          //   },
+          //   data: [6, 4, 10, 8]
+          // }
+        ]
+
+      };
+      return option;
+    }
+
+    function getOption4(_data) {
+
+      var timeData = [
+        '17-01',
+        '17-02',
+        '17-03',
+        '17-04',
+        '17-05',
+        '17-06',
+        '17-07',
+        '17-08',
+        '17-09',
+        '17-10',
+      ];
+      var dealNormal = [],
+        dealSerious = [],
+        dealUrgency = [],
+        discoveryNormal = [],
+        discoverySerious = [],
+        discoveryUrgency = [];
+      for (var i = 0; i < timeData.length; i++) {
+        var foundIndex = -1;
+        for (var j = 0; j < _data.deal.normal.length; j++) {
+          if (_data.deal.normal[j][0] == timeData[i]) {
+            foundIndex = j;
+            break;
+          }
+        }
+        if (foundIndex >= 0) {
+          dealNormal.push(_data.deal.normal[foundIndex][1]);
+        } else {
+          dealNormal.push(0);
+        }
+
+        foundIndex = -1;
+        for (var j = 0; j < _data.deal.serious.length; j++) {
+          if (_data.deal.serious[j][0] == timeData[i]) {
+            foundIndex = j;
+            break;
+          }
+        }
+        if (foundIndex >= 0) {
+          dealSerious.push(_data.deal.serious[foundIndex][1]);
+        } else {
+          dealSerious.push(0);
+        }
+
+        foundIndex = -1;
+        for (var j = 0; j < _data.deal.urgency.length; j++) {
+          if (_data.deal.urgency[j][0] == timeData[i]) {
+            foundIndex = j;
+            break;
+          }
+        }
+        if (foundIndex >= 0) {
+          dealUrgency.push(_data.deal.urgency[foundIndex][1]);
+        } else {
+          dealUrgency.push(0);
+        }
+
+        foundIndex = -1;
+        for (var j = 0; j < _data.discovery.normal.length; j++) {
+          if (_data.discovery.normal[j][0] == timeData[i]) {
+            foundIndex = j;
+            break;
+          }
+        }
+        if (foundIndex >= 0) {
+          discoveryNormal.push(_data.discovery.normal[foundIndex][1]);
+        } else {
+          discoveryNormal.push(0);
+        }
+
+        foundIndex = -1;
+        for (var j = 0; j < _data.discovery.serious.length; j++) {
+          if (_data.discovery.serious[j][0] == timeData[i]) {
+            foundIndex = j;
+            break;
+          }
+        }
+        if (foundIndex >= 0) {
+          discoverySerious.push(_data.discovery.serious[foundIndex][1]);
+        } else {
+          discoverySerious.push(0);
+        }
+
+        foundIndex = -1;
+        for (var j = 0; j < _data.discovery.urgency.length; j++) {
+          if (_data.discovery.urgency[j][0] == timeData[i]) {
+            foundIndex = j;
+            break;
+          }
+        }
+        if (foundIndex >= 0) {
+          discoveryUrgency.push(_data.discovery.urgency[foundIndex][1]);
+        } else {
+          discoveryUrgency.push(0);
+        }
+      }
+      // console.log(dealNormal);
+      // console.log(dealSerious);
+      // console.log(dealUrgency);
+      // console.log(discoveryNormal);
+      // console.log(discoverySerious);
+      // console.log(discoveryUrgency);
+
+
+      var option = {
+        dataZoom: [{
+          type: 'slider',
+          show: true,
+          xAxisIndex: [0],
+          start: 50,
+          end: 100,
+          textStyle: {
+            color: '#dcdcdc',
+          }
+        }],
+        legend: {
+        data: ['处理/一般', '处理/严重','处理/危急','发现/一般', '发现/严重','发现/危急'],
+        right: '2%',
+        textStyle: {
+          color: '#dcdcdc'
+        }
+      },
+        grid: {
+          width: '94%',
+          height: '65%',
+          top: '20%',
+          left: '3%',
+          right: '3%',
+          bottom: '15%',
+          containLabel: true
+        },
+        xAxis: [{
+          type: 'category',
+          data: timeData,
+          axisLabel: { //调整x轴的lable   
+            textStyle: {
+              fontSize: 14, // 让字体变大 
+              color: '#dcdcdc'
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#dcdcdc'
+            }
+          },
+        }],
+        yAxis: [{
+          type: 'value',
+          axisLabel: { //调整x轴的lable   
+            textStyle: {
+              fontSize: 14, // 让字体变大 
+              color: '#dcdcdc'
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#dcdcdc'
+            }
+          },
+        }],
+        series: [{
+          name: '处理/一般',
+          type: 'bar',
+          stack: '处理',
+          //barWidth: 16,
+          itemStyle: {
+            normal: {
+              color: '#00f0ff',
+            }
+          },
+          data: dealNormal
+        }, {
+          name: '处理/严重',
+          type: 'bar',
+          stack: '处理',
+          itemStyle: {
+            normal: {
+              color: '#0096ff',
+            }
+          },
+          data: dealSerious
+        }, {
+          name: '处理/危急',
+          type: 'bar',
+          stack: '处理',
+          itemStyle: {
+            normal: {
+              color: '#3300ff',
+            }
+          },
+          data: dealUrgency
+        }, {
+          name: '发现/一般',
+          type: 'bar',
+          stack: '发现',
+          itemStyle: {
+            normal: {
+              color: '#00ff6c',
+            }
+          },
+          data: discoveryNormal
+        }, {
+          name: '发现/严重',
+          type: 'bar',
+          stack: '发现',
+          itemStyle: {
+            normal: {
+              color: '#00cc56',
+            }
+          },
+          data: discoverySerious
+        }, {
+          name: '发现/危急',
+          type: 'bar',
+          stack: '发现',
+          itemStyle: {
+            normal: {
+              color: '#009966',
+            }
+          },
+          data: discoveryUrgency
+        }, ]
+      };
+      return option;
+    }
+  </script>
+</body>
+
+</html>

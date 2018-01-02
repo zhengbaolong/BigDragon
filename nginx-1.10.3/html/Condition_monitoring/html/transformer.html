@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>状态分析</title>
+</head>
+
+<body>
+
+  <div class="row c-tagDorpmenu">
+    <div class="col-lg-5 col-md-5 col-xs-5 col-sm-5 left">
+      <img src="../images/sub_1.png" />
+      <aside>状态分析 -> 变压器</aside>
+    </div>
+    <div class=" col-lg-7 col-md-7 col-xs-7 col-sm-7 right">
+      <select>
+        <option>变电站</option>
+        <option>测试1</option>
+        <option>测试2</option>
+      </select>
+      <select>
+        <option>电压等级</option>
+        <option>测试1</option>
+        <option>测试2</option>
+      </select>
+      <select>
+        <option>设备名称</option>
+        <option>测试1</option>
+        <option>测试2</option>
+      </select>
+      <div class="btn-affirm">确认</div>
+    </div>
+  </div>
+
+  <div class="row master layout-bg-style">
+    <div class="col-lg-7 col-md-7 col-xs-7 col-sm-7" style="padding-right: 35px;">
+      <div class="left_list1">
+        <div class="title">
+          <img src="../images/index_3.png" />
+          <span>变压器状态评估</span>
+        </div>
+        <div class="left_list1_warp marginTop">
+          <ul>
+            <li>变电站</li>
+            <li>设备名称</li>
+            <li>状态</li>
+          </ul>
+          <div id="tfList" class="tfList">
+
+          </div>
+        </div>
+        <div class="tr-message">
+          <aside>
+            <img src="../images/sub_top.png">
+          </aside>
+          <aside>
+            <img src="../images/sub_bottom.png">
+          </aside>
+        </div>
+      </div>
+      <div class="left_list2">
+        <ul>
+          <li>序号</li>
+          <li>变电站</li>
+          <li>设备名称</li>
+          <li>异常数据</li>
+          <li>扣分值</li>
+          <li>发生时间</li>
+        </ul>
+        <div class="tp">
+          <div id="tfList2" class="tfList2"></div>
+        </div>
+
+        <div class="page">
+          <img src="../images/sub_page2.png" />
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-5 col-md-5 col-xs-5 col-sm-5">
+      <div class="title">
+        <img src="../images/index_3.png" />
+        <span>站内变压器健康统计</span>
+      </div>
+      <div class="statistics">
+        <div class="styleChars" id="right-1"></div>
+        <ul class="styleChars styleChars_ul" id="styleChars">
+          <li>设备总数：
+            <span class="font-color-style1">5133</span>
+          </li>
+          <li>非正常设备：
+            <span class="font-color-style2">30</span>
+          </li>
+          <li>正常设备：
+            <span class="font-color-style3">5100</span>
+          </li>
+        </ul>
+      </div>
+      <article class="performance" id="right-2">
+      </article>
+    </div>
+  </div>
+  <script type="text/javascript" src="../js/juicer-min.js"></script>
+  <script id="tpl" type="text/template">
+    {@each list as item}
+    <ul>
+      <li>${item.xh}</li>
+      <li>${item.bdz}</li>
+      <li>${item.sbmc}</li>
+      <li>${item.ycsj}</li>
+      <li>${item.kfz}</li>
+      <li>${item.fssj}</li>
+    </ul>
+    {@/each}
+  </script>
+  <script id="healthStatistics" type="text/template">
+    {@each hs as item}
+      <li>设备总数：<span class="font-color-style1">${item.sbzs}</span></li>
+      <li>非正常设备：<span class="font-color-style2">${item.fzcsb}</span></li>
+      <li>正常设备：<span class="font-color-style3">${item.zcsb}</span></li>
+    {@/each}
+  </script>
+  <script>
+
+    function tfList() {
+      var dataList = [
+        ['静海变电站', '4#A相组', ''],
+        ['海河变电站', '1#A相组', '']
+      ];
+      var serious = 0,
+        normal = 1;
+      var newfn = new
+        $.ajax({
+          type: "POST",
+          url: baseUrl + "/bigdata-0.0.1-SNAPSHOT/appliance",
+          data: {
+
+          },
+          success: function (result) {
+            var html = '';
+            for (var i = 0; i < dataList.length; i++) {
+              html += "<ul>";
+              for (var j = 0; j < dataList[i].length; j++) {
+                if (j == 2) {
+                  if (i == 0 || i == 1) {
+                    html += "<li>" + dataList[i][j] + "<img src='../images/sub_red.png' /></li>";
+                  } else if (i == 2 || i == 3) {
+                    html += "<li>" + dataList[i][j] + "<img src='../images/sub_greed.png' /></li>";
+                  }
+                } else {
+                  html += "<li>" + dataList[i][j] + "</li>";
+                }
+              }
+
+              html += "</ul>";
+            };
+            $('#tfList').html(html);
+          }
+        });
+    };
+
+
+    function zdName(_site) {
+      var tpl = document.getElementById('tpl').innerHTML;
+      var html = juicer(tpl, { list: _site });
+      $('#tfList2').html(html);
+    };
+
+
+
+    var giftImageUrl =
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAB50lEQVRIib2WvUtcQRTFf/sVRbKrkkSIBDFop9iJ2IlV/gCJWEnQLopgIamEVBaC2ApJmzK1ldY2gjbGakMEQ1zRsDHZqLjHYt4ms5uZWXw+cmB4vLkz79yPM3deShIBjABTwCPgAHgPfAtt8EKSb8xLqqoeR5KeBPZ4h8/QIakiNybjEKU9gfYCrR7b7yRTl5H00RHNpqRsnIhSATFkgCPgac0n4DFwFiegLDABzAOnmLRcRLYeiwQgBSwBe0AeKABt0eiMntNA1ckk6bWn6HdFqZkY8nFS4UApZExjapEEys2IHv4vol8JEV01IzoELoFXGOWMAcUYRB3RMwO8w9TsE0aJfw5srkEl4zFU90PSS0nrDfNVScO+A/sAk/OWGJG5sFbrdW0NhizJqRGgOw0sYLx/G02mgOWILCmUkbRi5XNPUjFGfWr4IGnLMf8CSW/u8WEbRf0V05yknzJ32rKii282IaJ91Ss3J6lFVq87DuR2FRgA+oEZwldEY8+8xpxPA0lDHg+39W8XXgxEVHGsr+venz0efnHMFQIRtWIuRjcixpLDw++Snlle9ckUOITRUEQAuw4f2oEh6/0SqDjWlYEdYINADe0W1IUp/HPMD2MZ0xxvrPV5YBDTms6Br8CJN10WbgEjCNa0PybsiAAAAABJRU5ErkJggg==";
+    var tfRight = echarts.init(document.getElementById('right-1'));
+    tfRight.setOption({
+      graphic: {
+        elements: [{
+          type: 'image',
+          style: {
+            image: giftImageUrl,
+            width: 24,
+            height: 24
+          },
+          left: 'center',
+          top: 'center'
+        }]
+      },
+      series: [{
+        type: 'pie',
+        radius: [24, '75%'],
+        center: ['50%', '50%'],
+        roseType: 'radius',
+        color: ['#33ffcc', '#ff604b'],
+        data: [{
+          value: 35,
+          name: ''
+        }, {
+          value: 55,
+          name: ''
+        }],
+        labelLine: {
+          normal: {
+            show: false
+          },
+          emphasis: {
+            show: false
+          }
+        },
+        itemStyle: {
+          normal: {
+            shadowBlur: 30,
+            shadowColor: 'rgba(0, 0, 0, 0.4)'
+          }
+        },
+
+        animationType: 'scale',
+        animationEasing: 'elasticOut',
+        animationDelay: function (idx) {
+          return Math.random() * 200;
+        }
+      }]
+    });
+
+    //right-2
+
+    
+    function wx() {
+      var option = {
+        radar: {
+          indicator: [{
+            text: '绝缘性能',
+            max: 100
+          }, {
+            text: '密封性能',
+            max: 100
+          }, {
+            text: '动稳定性能',
+            max: 100
+          }, {
+            text: '非电量性能',
+            max: 100
+          }, {
+            text: '温升性能',
+            max: 100
+          }],
+          splitNumber: 5,
+          name: {
+            textStyle: {
+              color: '#fff',
+              fontSize: 16,
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#dcdcdc',
+              width: 2,
+              //   type: 'dotted',
+              type: 'solid'
+            },
+          },
+          splitLine: {
+            lineStyle: {
+              color: ['#dcdcdc', 'transparent', 'transparent', 'transparent', 'transparent'],
+              width: 2
+            }
+          },
+          splitArea: {
+            areaStyle: {
+              color: ['rgba(250,250,250,0.1)', 'transparent']
+            }
+          },
+        },
+        series: [{
+          type: 'radar',
+          tooltip: {
+            trigger: 'item'
+          },
+          symbol: 'circle',
+          symbolSize: 8,
+          itemStyle: {
+            normal: {
+              color: '#53C3D5',
+              borderColor: '#53C3D5',
+              shadowBlur: 10,
+              shadowColor: 'rgba(0, 0, 0, 0.4)'
+            }
+          },
+
+          data: [{
+            value: [50,13,25,70,100],
+            name: ''
+          }]
+        },]
+      };
+      var right2 = echarts.init(document.getElementById('right-2'));
+      right2.setOption(option);
+
+    };
+    function tfList2() {
+      $.ajax({
+        type: "GET",
+        url: "../js/list.json",
+        data: {
+
+        },
+        success: function (result) {
+          var tfDataCharValue = '';
+          zdName(result.data);
+          wx();
+          for(i=0;i<result.tfDataChar.length;i++){
+          }
+          $('#tfList ul').click(function () {
+            var siteNameVal = $(this).find('li').eq(0).text();
+            $('#tfList2 ul').detach();
+            if (siteNameVal == '静海变电站') {
+              zdName(result.data);
+            } else if (siteNameVal == '海河变电站') {
+              zdName(result.data2);
+            }
+
+          });
+
+        }
+      });
+    };
+    tfList();
+    tfList2();
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
